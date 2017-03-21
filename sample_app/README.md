@@ -26,3 +26,20 @@ $ rails server
 ```
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+
+
+# Static Pages
+切换分支
+```
+$ git checkout -b static-pages
+```
+
+生成控制器
+```
+$ rails generate controller StaticPages home help
+```
+
+撤销操作
+```
+$ rails destroy controller StaticPages home help
+```
