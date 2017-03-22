@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+  <!--<title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>-->
+  <title><%= full_title(yield(:title)) %> </title>
   <!--下面三句話是Rails生成的-->
   <%= csrf_meta_tags %><!--避免跨站请求伪造（Cross-Site Request Forgery，简称 CSRF，一种
 恶意网络攻击）-->
