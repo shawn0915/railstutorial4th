@@ -43,3 +43,19 @@ $ rails generate controller StaticPages home help
 ```
 $ rails destroy controller StaticPages home help
 ```
+
+# git
+
+## 合并分支
+```
+$ git checkout master
+$ git merge static-pages
+$ git push
+```
+
+# Guard
+## 初始化
+```
+bundle exec guard init
+```
+
