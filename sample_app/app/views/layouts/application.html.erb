@@ -1,38 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--<title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>-->
-  <title><%= full_title(yield(:title)) %> </title>
-  <!--下面三句話是Rails生成的-->
-  <%= csrf_meta_tags %><!--避免跨站请求伪造（Cross-Site Request Forgery，简称 CSRF，一种
-恶意网络攻击）-->
-
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!--https://github.com/aFarkas/html5shiv-->
-  <!--  [if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-  </script>
-  <![endif]-->
-
+  <title><%= full_title(yield(:title)) %></title>
+  <%= render 'layouts/rails_default' %>
+  <%= render 'layouts/shim' %>
 </head>
-
 <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
-
-  <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", '#' %></li>
-        <li><%= link_to "Help", '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<%= render 'layouts/header' %>
 <div class="container">
-<%= yield %><!--把每个页面的内容插入布局中。-->
+  <%= yield %>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
