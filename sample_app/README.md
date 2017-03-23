@@ -28,30 +28,41 @@ For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
 
 
-# Static Pages
-切换分支
-```
-$ git checkout -b static-pages
-```
-
-生成控制器
+# Rails Command
+##生成控制器
 ```
 $ rails generate controller StaticPages home help
 ```
 
-撤销操作
+## 撤销操作
 ```
 $ rails destroy controller StaticPages home help
 ```
 
 # Git
 
+## 切換分支
+```
+$ git checkout -b static-pages
+$ git checkout master
+```
+
 ## 合并分支
 ```
-$ git checkout master
 $ git merge static-pages
+```
+
+## 提交代碼
+```
 $ git push
 ```
+
+# 身份驗證
+
+##方案
+[OpenID](https://en.wikipedia.org/wiki/OpenID)
+
+[OAuth](https://en.wikipedia.org/wiki/OAuth)
 
 # Guard
 ## 初始化
@@ -62,7 +73,7 @@ $ bundle exec guard init
 # 測試
 
 ## 鏈接測試
-生成測試文件
+## 生成測試文件
 ```
 $ rails generate integration_test site_layout
 ```
