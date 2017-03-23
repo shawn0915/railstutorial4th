@@ -56,6 +56,20 @@ $ git push
 # Guard
 ## 初始化
 ```
-bundle exec guard init
+$ bundle exec guard init
 ```
+
+# 測試
+
+## 鏈接測試
+生成測試文件
+```
+$ rails generate integration_test site_layout
+```
+集成測試
+```
+$ rails test:integration
+```
+
+
 

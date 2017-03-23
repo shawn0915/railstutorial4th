@@ -10,4 +10,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # 把Application 辅助模块引入测试
+  include ApplicationHelper
 end
