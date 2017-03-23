@@ -93,5 +93,18 @@ $ rails generate migration add_index_to_users_email
 ```
 数据库迁移
 ```
-$ rails db:migrate RAILS_ENV=test
+rails db:migrate
+rails db:migrate RAILS_ENV=development
+rails db:migrate RAILS_ENV=test
 ```
+add_column
+```
+rails generate migration add_password_digest_to_users password_digest:string
+```
+
+
+
+
+
+
+
