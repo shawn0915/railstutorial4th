@@ -44,7 +44,7 @@ $ rails generate controller StaticPages home help
 $ rails destroy controller StaticPages home help
 ```
 
-# git
+# Git
 
 ## 合并分支
 ```
@@ -87,20 +87,45 @@ $ rails generate controller Users new
 $ rails generate model User name:string email:string
 ```
 
-创建索引
-```
-$ rails generate migration add_index_to_users_email
-```
+## Active Record
+驗證數據、約束條件
+
+## bcrypt 算法
+[字典攻擊](https://en.wikipedia.org/wiki/Dictionary_attack)
+
+[彩虹表攻擊](https://en.wikipedia.org/wiki/Rainbow_table)
+
+
+
+# 數據庫
+
 数据库迁移
 ```
 rails db:migrate
 rails db:migrate RAILS_ENV=development
 rails db:migrate RAILS_ENV=test
 ```
+刪除數據庫文件
+```
+cd db
+rm -f development.sqlite3
+```
+创建索引
+```
+$ rails generate migration add_index_to_users_email
+```
+
 add_column
 ```
 rails generate migration add_password_digest_to_users password_digest:string
 ```
+
+測試數據
+```
+rails console
+User.create(name: "Michael Hartl", email: "mhartl@example.com", password: "foobar", password_confirmation: "foobar")
+```
+
 
 
 
