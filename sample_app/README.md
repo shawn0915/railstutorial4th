@@ -72,4 +72,10 @@ $ rails test:integration
 ```
 
 
+# User
+
+生成控制器
+```
+$ rails generate controller Users new
+```
 
