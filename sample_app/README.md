@@ -66,9 +66,13 @@ $ bundle exec guard init
 ```
 $ rails generate integration_test site_layout
 ```
-集成測試
+## 集成測試
 ```
 $ rails test:integration
+```
+## 模型测试
+```
+$ rails test:models
 ```
 
 
@@ -78,4 +82,16 @@ $ rails test:integration
 ```
 $ rails generate controller Users new
 ```
+生成模型
+```
+$ rails generate model User name:string email:string
+```
 
+创建索引
+```
+$ rails generate migration add_index_to_users_email
+```
+数据库迁移
+```
+$ rails db:migrate RAILS_ENV=test
+```
