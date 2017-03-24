@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # root 'application#hello'
   Rails.application.routes.draw do
@@ -19,6 +17,10 @@ Rails.application.routes.draw do
 
     # 注冊
     get '/signup', to: 'users#new'
+    post '/signup', to: 'users#create'
+
+    # Users
+    resources :users
 
   end
 

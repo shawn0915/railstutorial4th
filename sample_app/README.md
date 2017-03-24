@@ -29,15 +29,31 @@ For more information, see the
 
 
 # Rails Command
-##生成控制器
+生成控制器
 ```
 $ rails generate controller StaticPages home help
 ```
-
-## 撤销操作
+撤销操作
 ```
 $ rails destroy controller StaticPages home help
 ```
+更新數據
+```
+rails console
+user = User.first
+user.update_attributes(name: "Shawn Yan",
+                                email: "shawn@shawnyan.com",
+                                password: "123456",
+                                password_confirmation: "123456")
+                                
+user.update_attributes(name: "Example User",
+email: "example@railstutorial.org",
+password: "foobar",
+password_confirmation: "foobar")
+
+```
+
+
 
 # Git
 
@@ -137,9 +153,13 @@ rails console
 User.create(name: "Michael Hartl", email: "mhartl@example.com", password: "foobar", password_confirmation: "foobar")
 ```
 
+# gravatar
 
-
-
+```
+https://secure.gravatar.com/site/implement/images/
+http://en.gravatar.com/
+http://en.gravatar.com/site/implement/hash/
+```
 
 
 
