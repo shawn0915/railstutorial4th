@@ -12,6 +12,14 @@ class UsersController < ApplicationController
     @user = User.new(params[:@user]) # 不是最终的实现方式
     if @user.save
       # 处理注册成功的情况
+
+      # 闪现消息
+      flush[:success] = "Welcome to the Sample App!"
+
+      # 重定向
+      redirect_to @user
+      # 等同于
+      # redirect_to user_url(@user)
     else
       render 'new'
     end

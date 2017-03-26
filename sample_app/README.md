@@ -57,18 +57,18 @@ password_confirmation: "foobar")
 
 # Git
 
-## 切換分支
+切換分支
 ```
 $ git checkout -b static-pages
 $ git checkout master
 ```
 
-## 合并分支
+合并分支
 ```
 $ git merge static-pages
 ```
 
-## 提交代碼
+提交代碼
 ```
 $ git push
 ```
