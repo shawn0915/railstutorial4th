@@ -166,6 +166,12 @@ http://en.gravatar.com/
 http://en.gravatar.com/site/implement/hash/
 ```
 
+# Chapter 8
+branch => base-login
+
+```
+rails generate controller Session new
+```
 
 
 
