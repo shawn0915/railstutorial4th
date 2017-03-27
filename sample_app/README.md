@@ -7,6 +7,10 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/)
 is available jointly under the MIT License and the Beerware License. See
 [LICENSE.md](LICENSE.md) for details.
+
+## Source
+[sample_app_4th_ed](https://bitbucket.org/railstutorial/sample_app_4th_ed)
+
 ## Getting started
 To get started with the app, clone the repo and then install the needed gems:
 ```
