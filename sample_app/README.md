@@ -154,7 +154,8 @@ rails generate migration add_password_digest_to_users password_digest:string
 測試數據
 ```
 rails console
-User.create(name: "Michael Hartl", email: "mhartl@example.com", password: "foobar", password_confirmation: "foobar")
+User.create(name: "Michael Hartl", email: "mhartl@example.com", 
+    password: "foobar", password_confirmation: "foobar")
 ```
 
 # gravatar

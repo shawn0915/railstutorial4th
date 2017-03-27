@@ -9,17 +9,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:@user]) # 不是最终的实现方式
+    # @user = User.new(params[:@user]) # 不是最终的实现方式
+    @user = User.new(user_params)
     if @user.save
       # 处理注册成功的情况
 
       # 闪现消息
-      flush[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to the Sample App!"
+      # flash[:info] = "Please check your email to activate your account."
 
       # 重定向
       redirect_to @user
       # 等同于
       # redirect_to user_url(@user)
+      # redirect_to root_url
     else
       render 'new'
     end
