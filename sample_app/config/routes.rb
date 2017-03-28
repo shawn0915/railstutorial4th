@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # 注冊
   get '/signup', to: 'users#new'
-  # post '/signup', to: 'users#create'
+  post '/signup', to: 'users#create'
 
   # Session
   get '/login', to: 'sessions#new'
