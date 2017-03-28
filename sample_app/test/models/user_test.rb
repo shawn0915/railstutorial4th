@@ -14,12 +14,15 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
-=begin
   test "name should be present" do
-    @user.name = " "
+    @user.name = "     "
     assert_not @user.valid?
   end
-=end
+
+  test "email should be present" do
+    @user.email = "     "
+    assert_not @user.valid?
+  end
 
   test "name should not be too long" do
     @user.name = "a" * 51
@@ -70,6 +73,11 @@ first.last@foo.jp alice+bob@baz.cn]
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
+  end
+
+  # 记忆摘要的值为nil 时，authenticated? 要返回false
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
   end
 
 end

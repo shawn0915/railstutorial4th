@@ -35,12 +35,24 @@ For more information, see the
 # Rails Command
 生成控制器
 ```
+=> StaticPages
 $ rails generate controller StaticPages home help
+=> user
+$ rails generate controller Users new
+=> Session
+$ rails generate controller Session new
+
 ```
 撤销操作
 ```
 $ rails destroy controller StaticPages home help
 ```
+生成模型
+```
+$ rails generate model User name:string email:string
+```
+
+
 更新數據
 ```
 rails console
@@ -56,7 +68,6 @@ password: "foobar",
 password_confirmation: "foobar")
 
 ```
-
 
 
 # Git
@@ -107,16 +118,7 @@ $ rails test:models
 ```
 
 
-# User
 
-生成控制器
-```
-$ rails generate controller Users new
-```
-生成模型
-```
-$ rails generate model User name:string email:string
-```
 
 ## Active Record
 驗證數據、約束條件
@@ -145,13 +147,15 @@ rm -f development.sqlite3
 ```
 $ rails generate migration add_index_to_users_email
 ```
-
 add_column
 ```
 rails generate migration add_password_digest_to_users password_digest:string
 ```
-
-測試數據
+增加remember_digest
+```
+rails generate migration add_remember_digest_to_users remember_digest:string
+```
+添加測試數據
 ```
 rails console
 User.create(name: "Michael Hartl", email: "mhartl@example.com", 
@@ -166,12 +170,10 @@ http://en.gravatar.com/
 http://en.gravatar.com/site/implement/hash/
 ```
 
-# Chapter 8
-branch => base-login
+# token
 
-```
-rails generate controller Session new
-```
+SecureRandom.urlsafe_base64
+=> "pDtKhXlRDnMArnambvsiTQ"
 
-
+[会话劫持](http://codebutler.com/firesheep)
 
