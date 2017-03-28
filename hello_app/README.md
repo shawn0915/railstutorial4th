@@ -71,4 +71,6 @@ $ rails server
 => Ctrl-C to shutdown server
 ```
 
+初始首页
+![img](img/hello_app_3.png)
 

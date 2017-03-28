@@ -177,3 +177,16 @@ SecureRandom.urlsafe_base64
 
 [会话劫持](http://codebutler.com/firesheep)
 
+# QA
+
+**cannot load such file** 
+
+ref:
+http://stackoverflow.com/questions/41621029/cannot-load-such-file-bcrypt-ext
+
+
+http://www.pixelstech.net/article/1488694151-Fix-issue-cannot-load-such-file----bcrypt_ext-%28LoadError%29
+
+
+win-build
+http://win-builds.org/doku.php/download_and_installation_from_windows

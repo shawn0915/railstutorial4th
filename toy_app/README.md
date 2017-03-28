@@ -1,24 +1,26 @@
-# README
+# toy_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```ruby
+$ rails generate scaffold User name:string email:string
+```
+注意!
 
-Things you may want to cover:
+没必要指定id 字段，Rails 会自动创建并将其设为表的主键（primary key）。
 
-* Ruby version
 
-* System dependencies
+**migrate**
 
-* Configuration
+迁移（migrate）数据库
+使用新的User 数据模型更新数据库
 
-* Database creation
+```ruby
+$ rails db:migrate
+```
 
-* Database initialization
+**Microposts**
 
-* How to run the test suite
+使用rails generate scaffold 命令生成Microposts 资源的代码
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+$ rails generate scaffold Micropost content:text user_id:integer
+```
