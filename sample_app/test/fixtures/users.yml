@@ -1,2 +1,8 @@
 # empty
 # 提供示例数据
+
+# 测试用户登录所需的固件
+michael:
+  name: Michael Hartl
+  email: mhartl@example.com
+  password_digest: <%= User.digest('password') %>

@@ -14,6 +14,9 @@ class UsersController < ApplicationController
     if @user.save
       # 处理注册成功的情况
 
+      # 注册后登入用户
+      log_in @user
+
       # 闪现消息
       flash[:success] = "Welcome to the Sample App!"
       # flash[:info] = "Please check your email to activate your account."

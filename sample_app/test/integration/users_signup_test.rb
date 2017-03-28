@@ -25,6 +25,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       assert_select 'div#error_explanation'
       assert_select 'div.field_with_errors'
     end
+
   end
 
   test "valid signup information with account activation" do
@@ -40,7 +41,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
     assert_template 'users/show'
-    # assert is_logged_in?
+    assert is_logged_in? # 注册后登入
   end
 
 
