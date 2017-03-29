@@ -169,6 +169,15 @@ https://secure.gravatar.com/site/implement/images/
 http://en.gravatar.com/
 http://en.gravatar.com/site/implement/hash/
 ```
+**img**
+
+![img](https://s.gravatar.com/avatar/0f6dca05754c07690164183e3b9e50e0?s=80)
+
+```
+Email Address: shawn2016@aliyun.com
+Email Hash: 0f6dca05754c07690164183e3b9e50e0
+https://s.gravatar.com/avatar/0f6dca05754c07690164183e3b9e50e0?s=80
+```
 
 # token
 
