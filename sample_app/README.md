@@ -91,6 +91,7 @@ $ git push
 # 身份驗證
 
 ##方案
+
 [OpenID](https://en.wikipedia.org/wiki/OpenID)
 
 [OAuth](https://en.wikipedia.org/wiki/OAuth)
