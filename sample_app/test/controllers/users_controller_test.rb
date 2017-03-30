@@ -20,8 +20,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect update when not logged in" do
     # patch请求 => Users.update
-    patch user_path(@users), params: { user: { name: @users.name,
-                                              email: @users.email } }
+    patch user_path(@users), params: {user: {name: @users.name,
+                                             email: @users.email}}
     assert_not flash.empty?
     assert_redirected_to login_url
   end
@@ -35,8 +35,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should redirect update when logged in as wrong user" do
     log_in_as(@other_user)
-    patch user_path(@users), params: { user: { name: @users.name,
-                                              email: @users.email } }
+    patch user_path(@users), params: {user: {name: @users.name,
+                                             email: @users.email}}
     assert flash.empty?
     assert_redirected_to root_url
   end
@@ -44,6 +44,36 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should redirect index when not logged in" do
     get users_path
     assert_redirected_to login_url
+  end
+
+=begin
+  test "should not allow the admin attribute to be edited via the web" do
+    log_in_as(@other_user)
+    assert_not @other_user.admin?
+    patch user_path(@other_user), params: {
+        user: {password: FILL_IN,
+               password_confirmation: FILL_IN,
+               admin: FILL_IN}}
+    assert_not @other_user.FILL_IN.admin?
+  end
+=end
+
+  # 确认了未授权的用户（非管理员）不能删除用户
+  test "should redirect destroy when logged in as a non-admin" do
+    log_in_as(@other_user)
+    assert_no_difference 'User.count' do
+      delete user_path(@users)
+    end
+    assert_redirected_to root_url
+  end
+
+  # 确认管理员点击删除链接后能成功删除用户
+  test "should redirect destroy when logged in as a admin" do
+    log_in_as(@users)
+    assert_difference 'User.count', -1 do
+      delete user_path(@other_user)
+    end
+    assert_redirected_to users_path
   end
 
 end

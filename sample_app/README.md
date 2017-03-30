@@ -66,8 +66,8 @@ user.update_attributes(name: "Example User",
 email: "example@railstutorial.org",
 password: "foobar",
 password_confirmation: "foobar")
-
 ```
+
 
 
 # Git
@@ -164,6 +164,10 @@ rails generate migration add_remember_digest_to_users remember_digest:string
 rails console
 User.create(name: "Michael Hartl", email: "mhartl@example.com", 
     password: "foobar", password_confirmation: "foobar")
+```
+添加admin
+```ruby
+$ rails generate migration add_admin_to_users admin:boolean
 ```
 
 # gravatar
