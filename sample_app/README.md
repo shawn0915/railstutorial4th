@@ -169,6 +169,11 @@ User.create(name: "Michael Hartl", email: "mhartl@example.com",
 ```ruby
 $ rails generate migration add_admin_to_users admin:boolean
 ```
+生成种子用户
+```ruby
+$ rails db:seed
+```
+
 
 # gravatar
 
