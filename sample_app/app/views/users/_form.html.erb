@@ -1,4 +1,5 @@
 <%#= 表單局部视图 %>
+<%#= form_for(@user, url: signup_path) do |f| %>
 <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     <%= f.label :name %>

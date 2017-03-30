@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    # user_params -- 健壮参数（strong parameter）
     if @user.update_attributes(user_params)
       # 处理更新成功的情况
       flash[:success] = "Profile updated"

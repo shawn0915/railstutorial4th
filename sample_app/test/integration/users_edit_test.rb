@@ -2,7 +2,6 @@ require 'test_helper'
 
 class UsersEditTest < ActionDispatch::IntegrationTest
   def setup
-    # @user = users(:michael)
     @user = users(:michael)
   end
 
@@ -14,9 +13,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                             password: "foo",
                                             password_confirmation: "bar"}}
     assert_template 'users/edit'
+    # assert_select "div", "The form contains 4 errors"
   end
 
-  test 'successful edit' do
+  test "successful edit" do
     get edit_user_path(@user)
     assert_template 'users/edit'
     name = "shawn yan"

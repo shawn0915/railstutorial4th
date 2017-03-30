@@ -13,19 +13,19 @@ is available jointly under the MIT License and the Beerware License. See
 
 ## Getting started
 To get started with the app, clone the repo and then install the needed gems:
-```
+```ruby
 $ bundle install --without production
 ```
 Next, migrate the database:
-```
+```ruby
 $ rails db:migrate
 ```
 Finally, run the test suite to verify that everything is working correctly:
-```
+```ruby
 $ rails test
 ```
 If the test suite passes, you'll be ready to run the app in a local server:
-```
+```ruby
 $ rails server
 ```
 For more information, see the
@@ -34,7 +34,7 @@ For more information, see the
 
 # Rails Command
 生成控制器
-```
+```ruby
 => StaticPages
 $ rails generate controller StaticPages home help
 => user
@@ -44,17 +44,17 @@ $ rails generate controller Session new
 
 ```
 撤销操作
-```
+```ruby
 $ rails destroy controller StaticPages home help
 ```
 生成模型
-```
+```ruby
 $ rails generate model User name:string email:string
 ```
 
 
 更新數據
-```
+```ruby
 rails console
 user = User.first
 user.update_attributes(name: "Shawn Yan",
@@ -98,7 +98,7 @@ $ git push
 
 # Guard
 ## 初始化
-```
+```ruby
 $ bundle exec guard init
 ```
 
@@ -106,18 +106,21 @@ $ bundle exec guard init
 
 ## 鏈接測試
 ## 生成測試文件
-```
+```ruby
 $ rails generate integration_test site_layout
 ```
 ## 集成測試
-```
+```ruby
 $ rails test:integration
 ```
 ## 模型测试
-```
+```ruby
 $ rails test:models
 ```
-
+## 執行指定測試類
+```ruby
+$ rails test test/integration/users_login_test.rb
+```
 
 
 
@@ -134,30 +137,30 @@ $ rails test:models
 # 數據庫
 
 数据库迁移
-```
+```ruby
 rails db:migrate
 rails db:migrate RAILS_ENV=development
 rails db:migrate RAILS_ENV=test
 ```
 刪除數據庫文件
-```
+```ruby
 cd db
 rm -f development.sqlite3
 ```
 创建索引
-```
+```ruby
 $ rails generate migration add_index_to_users_email
 ```
 add_column
-```
+```ruby
 rails generate migration add_password_digest_to_users password_digest:string
 ```
 增加remember_digest
-```
+```ruby
 rails generate migration add_remember_digest_to_users remember_digest:string
 ```
 添加測試數據
-```
+```ruby
 rails console
 User.create(name: "Michael Hartl", email: "mhartl@example.com", 
     password: "foobar", password_confirmation: "foobar")
