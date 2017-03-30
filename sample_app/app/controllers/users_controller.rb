@@ -3,35 +3,36 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @user = User.all
+    # @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def new
-    @user = User.new
+    @users = User.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @users = User.find(params[:id])
     # debugger
   end
 
   def create
-    # @user = User.new(params[:@user]) # 不是最终的实现方式
-    @user = User.new(user_params)
-    if @user.save
+    # @users = User.new(params[:@users]) # 不是最终的实现方式
+    @users = User.new(user_params)
+    if @users.save
       # 处理注册成功的情况
 
       # 注册后登入用户
-      log_in @user
+      log_in @users
 
       # 闪现消息
       flash[:success] = "Welcome to the Sample App!"
       # flash[:info] = "Please check your email to activate your account."
 
       # 重定向
-      redirect_to @user
+      redirect_to @users
       # 等同于
-      # redirect_to user_url(@user)
+      # redirect_to user_url(@users)
       # redirect_to root_url
     else
       render 'new'
@@ -39,16 +40,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @users = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    @users = User.find(params[:id])
     # user_params -- 健壮参数（strong parameter）
-    if @user.update_attributes(user_params)
+    if @users.update_attributes(user_params)
       # 处理更新成功的情况
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to @users
     else
       render 'edit'
     end
@@ -75,9 +76,9 @@ class UsersController < ApplicationController
 
   # 确保是正确的用户
   def correct_user
-    @user = User.find(params[:id])
-    # redirect_to(root_url) unless @user == current_user
-    redirect_to(root_url) unless current_user?(@user)
+    @users = User.find(params[:id])
+    # redirect_to(root_url) unless @users == current_user
+    redirect_to(root_url) unless current_user?(@users)
   end
 
 end

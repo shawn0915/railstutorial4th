@@ -190,6 +190,10 @@ SecureRandom.urlsafe_base64
 
 [会话劫持](http://codebutler.com/firesheep)
 
+# 分页
+
+[will_paginate](https://github.com/mislav/will_paginate/wiki)
+
 # QA
 
 **cannot load such file** 
