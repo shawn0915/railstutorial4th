@@ -13,7 +13,9 @@ class SessionsController < ApplicationController
       # remember user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       # 登入用户，然后重定向到用户的资料页面
-      redirect_to user
+      # redirect_to user
+      # 友好跳转
+      redirect_back_or user
     else
       # 创建一个错误消息
       # flash[:danger] = 'Ivalid email/password combination' # 不完全正确
