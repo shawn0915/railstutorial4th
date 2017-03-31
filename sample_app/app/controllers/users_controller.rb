@@ -18,9 +18,12 @@ class UsersController < ApplicationController
   end
 
   def create
+
     # @users = User.new(params[:@users]) # 不是最终的实现方式
     @users = User.new(user_params)
     if @users.save
+
+=begin
       # 处理注册成功的情况
 
       # 注册后登入用户
@@ -35,6 +38,14 @@ class UsersController < ApplicationController
       # 等同于
       # redirect_to user_url(@users)
       # redirect_to root_url
+=end
+
+
+      # 账户激活邮件
+      UserMailer.account_activation(@users).deliver_now
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
+
     else
       render 'new'
     end
