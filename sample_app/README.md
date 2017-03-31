@@ -173,6 +173,10 @@ $ rails generate migration add_admin_to_users admin:boolean
 ```ruby
 $ rails db:seed
 ```
+添加user属性
+```ruby
+rails generate migration add_activation_to_users activation_digest:string activated:boolean activated_at:datetime
+```
 
 
 # gravatar

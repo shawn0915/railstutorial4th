@@ -24,5 +24,9 @@ Rails.application.routes.draw do
 
   # Users
   resources :users
+  # GET /account_activation/<token>/edit
+  # edit edit_account_activation_url(token)
+  resources :account_activations, only: [:edit]
+
 
 end

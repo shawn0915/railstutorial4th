@@ -1,11 +1,13 @@
 class User < ApplicationRecord
   # 约定：模式为单数，DB表名为复数
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   # 转换小写
   # before_save {self.email = email.downcase}
-  before_save { email.downcase! }
+  # before_save { email.downcase! }
 
   # 存在性验证
   validates :name, presence: true, length: {maximum: 50}
@@ -53,6 +55,19 @@ class User < ApplicationRecord
   # 忘记用户
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  private
+
+  # 把电子邮件地址转换成小写
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  # 创建并赋值激活令牌和摘要
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 
 end
