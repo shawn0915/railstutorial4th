@@ -203,6 +203,10 @@ SecureRandom.urlsafe_base64
 
 [会话劫持](http://codebutler.com/firesheep)
 
+使用生成的令牌创建唯一的 URL，用于激活账户
+
+使用哈希摘要安全识别有效的激活请求
+
 # 分页
 
 [will_paginate](https://github.com/mislav/will_paginate/wiki)

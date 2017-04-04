@@ -77,7 +77,8 @@ first.last@foo.jp alice+bob@baz.cn]
 
   # 记忆摘要的值为nil 时，authenticated? 要返回false
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @users.authenticated?('')
+    # assert_not @users.authenticated?('')
+    assert_not @users.authenticated?(:remember, '')
   end
 
 end
