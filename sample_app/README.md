@@ -198,6 +198,8 @@ https://s.gravatar.com/avatar/0f6dca05754c07690164183e3b9e50e0?s=80
 
 # token
 
+**生成随机令牌**
+
 SecureRandom.urlsafe_base64
 => "pDtKhXlRDnMArnambvsiTQ"
 
