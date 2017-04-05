@@ -2,6 +2,10 @@
 # root 'application#hello'
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'static_pages#home'
 
   # get 'static_pages/home'
@@ -27,6 +31,13 @@ Rails.application.routes.draw do
   # GET /account_activation/<token>/edit
   # edit edit_account_activation_url(token)
   resources :account_activations, only: [:edit]
+=begin
+GET /password_resets/new new new_password_reset_path
+POST /password_resets create password_resets_path
+GET /password_resets/<token>/edit edit edit_password_reset_path(token)
+PATCH /password_resets/<token> update password_reset_path(token)
+=end
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
 
 end

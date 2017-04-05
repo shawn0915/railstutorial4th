@@ -149,7 +149,7 @@ rm -f development.sqlite3
 ```
 创建索引
 ```ruby
-$ rails generate migration add_index_to_users_email
+rails generate migration add_index_to_users_email
 ```
 add_column
 ```ruby
@@ -167,17 +167,20 @@ User.create(name: "Michael Hartl", email: "mhartl@example.com",
 ```
 添加admin
 ```ruby
-$ rails generate migration add_admin_to_users admin:boolean
+rails generate migration add_admin_to_users admin:boolean
 ```
 生成种子用户
 ```ruby
-$ rails db:seed
+rails db:seed
 ```
 添加user属性
 ```ruby
 rails generate migration add_activation_to_users activation_digest:string activated:boolean activated_at:datetime
 ```
-
+添加reset属性
+```ruby
+rails generate migration add_reset_to_users reset_digest:string reset_sent_at:datetime
+```
 
 # gravatar
 
