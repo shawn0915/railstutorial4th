@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # 约定：模式为单数，DB表名为复数
 
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
 
@@ -33,7 +33,8 @@ class User < ApplicationRecord
   end
 
   # 返回一个随机令牌
-  def User.new_token
+  # def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -51,7 +52,8 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     # code list 11.26
     digest = send("#{attribute}_digest")
-    return false if remember_digest.nil?
+    # return false if remember_digest.nil?
+    return false if digest.nil?
     # BCrypt::Password.new(remember_digest).is_password?(remember_token)
     BCrypt::Password.new(digest).is_password?(token)
   end
@@ -70,6 +72,23 @@ class User < ApplicationRecord
   # 发送激活邮件
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  # 设置密码重设相关的属性
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest, User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  # 发送密码重设邮件
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  # 如果密码重设请求超时了，返回 true
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 
   private
