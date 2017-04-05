@@ -6,6 +6,7 @@
     <%= form_for(@users, url: password_reset_path(params[:id])) do |f| %>
         <%= render 'shared/error_messages' %>
 
+        <%#= 表单标签辅助方法 %>
         <%= hidden_field_tag :email, @users.email %>
 
         <%= f.label :password %>

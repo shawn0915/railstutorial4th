@@ -33,7 +33,8 @@ class User < ApplicationRecord
   end
 
   # 返回一个随机令牌
-  def User.new_token
+  # def User.new_token
+  def self.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -51,7 +52,8 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     # code list 11.26
     digest = send("#{attribute}_digest")
-    return false if remember_digest.nil?
+    # return false if remember_digest.nil?
+    return false if digest.nil?
     # BCrypt::Password.new(remember_digest).is_password?(remember_token)
     BCrypt::Password.new(digest).is_password?(token)
   end
@@ -82,6 +84,11 @@ class User < ApplicationRecord
   # 发送密码重设邮件
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+
+  # 如果密码重设请求超时了，返回 true
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 
   private
