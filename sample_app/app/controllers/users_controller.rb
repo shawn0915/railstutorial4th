@@ -87,6 +87,8 @@ class UsersController < ApplicationController
 
   # 前置过滤器
 
+=begin
+  # 转移到 application_controller中
   # 确保用户已登录
   def logged_in_user
     unless logged_in?
@@ -95,6 +97,7 @@ class UsersController < ApplicationController
       redirect_to login_url
     end
   end
+=end
 
   # 确保是正确的用户
   def correct_user

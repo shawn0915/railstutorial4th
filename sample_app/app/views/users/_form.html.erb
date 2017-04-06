@@ -1,7 +1,8 @@
 <%#= 表單局部视图 %>
 <%#= form_for(@users, url: signup_path) do |f| %>
 <%= form_for(@users) do |f| %>
-    <%= render 'shared/error_messages' %>
+    <%#= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
 

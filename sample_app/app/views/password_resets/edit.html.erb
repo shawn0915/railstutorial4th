@@ -4,7 +4,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@users, url: password_reset_path(params[:id])) do |f| %>
-        <%= render 'shared/error_messages' %>
+        <%#= render 'shared/error_messages' %>
+        <%= render 'shared/error_messages', object: f.object %>
 
         <%#= 表单标签辅助方法 %>
         <%= hidden_field_tag :email, @users.email %>

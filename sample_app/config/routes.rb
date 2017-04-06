@@ -38,6 +38,11 @@ GET /password_resets/<token>/edit edit edit_password_reset_path(token)
 PATCH /password_resets/<token> update password_reset_path(token)
 =end
   resources :password_resets, only: [:new, :create, :edit, :update]
+=begin
+POST /microposts create microposts_path
+DELETE /microposts/1 destroy micropost_path(micropost)
+=end
+  resources :microposts, only: [:create, :destroy]
 
 
 end

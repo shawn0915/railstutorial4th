@@ -1,12 +1,15 @@
-<% if @users.errors.any? %>
+<%# if @users.errors.any? %>
+<% if object.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
         <%#= pluralize方法 由转置器inflector实现
         处理大多数单词的单复数变换%>
-        The form contains <%= pluralize(@users.errors.count, "error") %>.
+        <!--The form contains <%#= pluralize(@users.errors.count, "error") %>.-->
+        The form contains <%= pluralize(object.errors.count, "error") %>.
       </div>
       <ul>
-        <% @users.errors.full_messages.each do |msg| %>
+        <%# @users.errors.full_messages.each do |msg| %>
+        <% object.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
         <% end %>
       </ul>
