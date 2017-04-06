@@ -37,7 +37,8 @@ Update的四种情况：
     elsif @users.update_attributes(user_params) # 第四种情况
       log_in @users
       # 成功重设密码后清除重设摘要
-      @users.update_attributes(:reset_digest, nil)
+      # @users.update_attributes(:reset_digest, nil)
+      # @users.update_attributes(:reset_digest)
       flash[:success] = "Password has been reset."
       redirect_to @users
     else
