@@ -185,9 +185,13 @@ rails generate migration add_activation_to_users activation_digest:string activa
 ```ruby
 rails generate migration add_reset_to_users reset_digest:string reset_sent_at:datetime
 ```
-生成Micropost 模型
+生成 Micropost 模型
 ```ruby
 rails generate model Micropost content:text user:references
+```
+添加图片属性
+```ruby
+rails generate migration add_picture_to_microposts picture:string
 ```
 
 # gravatar
@@ -206,6 +210,11 @@ Email Address: shawn2016@aliyun.com
 Email Hash: 0f6dca05754c07690164183e3b9e50e0
 https://s.gravatar.com/avatar/0f6dca05754c07690164183e3b9e50e0?s=80
 ```
+
+图片大小裁剪
+
+[ImageMagick](https://www.imagemagick.org/script/download.php)
+
 
 # token
 

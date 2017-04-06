@@ -18,6 +18,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
 =end
     # 有效提交
     content = "This micropost really ties the room together"
+    # picture = fixture_file_upload('test/fixtures/rails.png', 'image/png')
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: {micropost: {content: content}}
     end
