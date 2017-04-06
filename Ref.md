@@ -70,6 +70,8 @@ https://ihower.tw/rails/
 
 [原型設計工具wireframes](https://gomockingbird.com/home)
 
+[Faker](https://github.com/stympy/faker)
+
 # 相关项目
 
 ## execjs

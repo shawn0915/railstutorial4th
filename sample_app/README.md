@@ -23,10 +23,14 @@ $ rails db:migrate
 Finally, run the test suite to verify that everything is working correctly:
 ```ruby
 $ rails test
+簡寫 =>
+$ rails t
 ```
 If the test suite passes, you'll be ready to run the app in a local server:
 ```ruby
 $ rails server
+簡寫 =>
+$ rails s
 ```
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
@@ -180,6 +184,10 @@ rails generate migration add_activation_to_users activation_digest:string activa
 添加reset属性
 ```ruby
 rails generate migration add_reset_to_users reset_digest:string reset_sent_at:datetime
+```
+生成Micropost 模型
+```ruby
+rails generate model Micropost content:text user:references
 ```
 
 # gravatar

@@ -81,4 +81,13 @@ first.last@foo.jp alice+bob@baz.cn]
     assert_not @users.authenticated?(:remember, '')
   end
 
+  # CodeList 13.20 test destroy
+  test "associated microposts should be destroyed" do
+    @users.save
+    @users.microposts.create!(content: "Lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @users.destroy
+    end
+  end
+
 end
