@@ -51,7 +51,24 @@ https://tutorials.railsapps.org/
 
 [Ruby on Rails Guides](http://guides.rubyonrails.org/)
 
+https://ihower.tw/rails/
 
+[Xdite 學習歷程經驗](https://github.com/softnshare/careergrowth/issues/23)
+
+
+# 其他資源
+
+[rubygems](https://rubygems.org/)
+
+[ruby-china](https://ruby-china.org/)
+
+[Ruby on Rails 指南 (v5.0.1)](http://guides.ruby-china.org/)
+
+[正則表達式](http://www.rubular.com/)
+
+[Ruby开发文档](http://doc.rubyfans.com/)
+
+[原型設計工具wireframes](https://gomockingbird.com/home)
 
 # 相关项目
 
@@ -69,3 +86,4 @@ Run JavaScript code from Ruby
 [Haml](http://haml.info/)
 
 
+[六个最酷的 Ruby on Rails 项目](http://www.oschina.net/news/71079/6-cool-rails-projects)
