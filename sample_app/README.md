@@ -193,6 +193,10 @@ rails generate model Micropost content:text user:references
 ```ruby
 rails generate migration add_picture_to_microposts picture:string
 ```
+Relationship
+```ruby
+rails generate model Relationship follower_id:integer followed_id:integer
+```
 
 # gravatar
 
@@ -246,3 +250,8 @@ http://www.pixelstech.net/article/1488694151-Fix-issue-cannot-load-such-file----
 
 win-build
 http://win-builds.org/doku.php/download_and_installation_from_windows
+
+
+# TODO
+
+forget password 跳转报错

@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @users = User.new(name: "Example User", email: "user@example.com",
-                     password: "foobar", password_confirmation: "foobar") # Chapter 6.3.2
+                      password: "foobar", password_confirmation: "foobar") # Chapter 6.3.2
   end
 
   test "should be valid" do
@@ -88,6 +88,18 @@ first.last@foo.jp alice+bob@baz.cn]
     assert_difference 'Micropost.count', -1 do
       @users.destroy
     end
+  end
+
+  # CodeList 14.9 follow
+  test "should follow and unfollow a user" do
+    michael = users(:michael)
+    archer = users(:archer)
+    assert_not michael.following?(archer)
+    michael.follow(archer)
+    assert michael.following?(archer)
+    assert archer.followers.include?(michael)
+    michael.unfollow(archer)
+    assert_not michael.following?(archer)
   end
 
 end
