@@ -27,7 +27,17 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destory'
 
   # Users
-  resources :users
+  # resources :users
+=begin
+  GET /users/1/following following following_user_path(1)
+  GET /users/1/followers followers followers_user_path(1)
+=end
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   # GET /account_activation/<token>/edit
   # edit edit_account_activation_url(token)
   resources :account_activations, only: [:edit]
@@ -43,6 +53,8 @@ POST /microposts create microposts_path
 DELETE /microposts/1 destroy micropost_path(micropost)
 =end
   resources :microposts, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
 
 
 end

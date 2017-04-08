@@ -76,4 +76,16 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to users_path
   end
 
+  # CodeList 14.24
+  # 测试我关注的用户列表页面和关注我的用户列表页面的访问限制
+  test "should redirect following when not logged in" do
+    get following_user_path(@users)
+    assert_redirected_to login_url
+  end
+
+  test "should redirect followers when not logged in" do
+    get followers_user_path(@users)
+    assert_redirected_to login_url
+  end
+
 end
