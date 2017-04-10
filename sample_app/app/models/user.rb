@@ -108,7 +108,15 @@ class User < ApplicationRecord
   # 实现动态流原型
   # 完整的实现参见第 14 章
   def feed
-    Micropost.where("user_id = ?", id)
+    # Micropost.where("user_id = ?", id)
+    # Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    # 子查询
+    # Micropost.where("user_id IN (:following_ids) OR user_id = :user_id",
+    # following_ids: following_ids, user_id: id)
+    following_ids = "SELECT followed_id FROM relationships
+        WHERE follower_id = :user_id"
+    Micropost.where("user_id IN (#{following_ids})
+            OR user_id = :user_id", user_id: id)
   end
 
   # 关注另一个用户
