@@ -72,6 +72,32 @@ https://ihower.tw/rails/
 
 [Faker](https://github.com/stympy/faker)
 
+# 后续学习资源
+
+[RailsApps](https://tutorials.railsapps.org/)
+
+很多针对特定话题的 Rails 项目和教程，说明详细
+
+[The Learn Enough Society](https://www.learnenough.com/story)
+
+收费订阅服务，提供本书的特别增强版和 15 个小时多的视频课程。
+我在这些视频中介绍了很多技巧，而且还提供了在线示例，光看本书是得不到这些的。
+此外，这项服务还包含Learn Enough 系列教程的文字资料和视频。
+如果你是学生，可以使用教育优惠。
+
+[Launch School](https://launchschool.com/)
+
+近些年涌现了很多开发者现场训练营，我建议在当地参与一个。不过，Launch School
+是在线训练营，在任何地方都能参加。如果你希望有人按照结构化课程教你，Launch School 是不错的
+选择。
+
+[Thinkful](https://www.thinkful.com/a/railstutorial)
+
+在线课程，由专业的工程师辅导开发项目。教授的课程包括 Ruby on Rails、前端开发、Web
+设计和数据库科学。
+
+
+
 # 相关项目
 
 ## execjs
